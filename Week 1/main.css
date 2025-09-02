@@ -1,0 +1,162 @@
+/* Simple reset courtesy of Josh Comeau - https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+
+/* Fonts */
+h1,h2,h3,h4,h5,h6{
+    font-family: "Roboto", sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+p, a, li, dt, dd{
+    font-family: "Nunito", sans-serif;
+    max-width: 70ch;
+}
+a{
+    color: white;
+}
+a:hover{
+    color: #BADA55
+}
+a:visited{
+    color: #6f42c1;
+}
+dt{
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+
+
+body{
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+/*------------------------------------------------------------- LAB ONE */
+/* header is the selector*/
+header{
+    /*everything within the curly brackets is the declaration block*/
+    /* format
+       property: value
+    */
+    width: 100%; /* everything after the property is the value you would like to apply to the selector
+    property: width
+    value: 100%
+    */
+}
+/* ---------------------------------------------------------------------------*/
+
+nav{
+    height: 50px;
+    background-color: #000000;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-right: 20px;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#intro {
+    background-color: #BADA55;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#expect{
+    display: flex;
+    border: 1px dashed;
+    border-radius: 10px;
+    padding: 30px 20px;
+}
+
+#ready{
+    background-color: #BADA55;
+}
