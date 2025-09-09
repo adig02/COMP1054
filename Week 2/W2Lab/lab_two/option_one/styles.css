@@ -1,10 +1,20 @@
  /* =============================================================
       TASKS
-       1.) Pick a Colors palette and define: --base, --text, --secondary, --primary, --accent using CSS variables
+       1.) Pick a Coloors palette and define: --base, --text, --secondary, --primary, --accent using CSS variables
        2.) Implement background image in .hero and add parallax-like effect
        3.) Apply colours using CSS variables & var( )
        4.) Ensure WCAG AA contrast
     ============================================================= */
+
+ /* 1. Set the theme colours */
+ :root{
+     --base: #FFFCF9;
+     --text: #0e0e0e;
+     --secondary: #E8E8E3;
+     --primary: #f8f8f8;
+     --accent: #007552;
+     --btnhover: #00704F
+ }
 
     *,
     *::before,
@@ -125,4 +135,60 @@
       text-align: center;
 
     }
+
+/* 2. Applying the Variable Colours */
+ .hero div{
+     color: var(--primary);
+ }
+ body{
+     background-color: var(--base);
+ }
+ h1{
+     color:  var(--primary);
+ }
+ h2,h3,h4,h5,h6{
+     color: var(--accent);
+ }
+ p{
+     color: var(--text);
+ }
+ a{
+     color: var(--primary);
+ }
+
+ header, footer{
+     background-color: var(--accent);
+
+ }
+
+ .hero div p{
+     color: var(--primary);
+ }
+ .hero div a{
+     color: var(--primary);
+     font-weight: bold;
+ }
+ footer{
+     color: var(--secondary);
+ }
+ footer a{
+     color: var(--base);
+     font-weight: bold;
+ }
+
+ .btn{
+     background-color: var(--accent);
+ }
+
+ .btn:hover{
+    background-color: var(--btnhover);
+ }
+
+/* 3. Background Image  */
+ .hero{
+     background: url("./img/img1.jpg") no-repeat center/cover fixed;
+     min-height: 80vh;
+ }
+
+
 

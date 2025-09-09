@@ -68,27 +68,38 @@ article {
 
 header {
     height: 50vh;
-    /*background-color*/ 
+
+    /*background-color*/
     background-color: #BADA55; 
-    /*gradients*/ 
+
+    /*gradients*/
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(77, 182, 138, 1) 39%, rgba(87, 199, 133, 1) 50%, rgba(97, 200, 130, 1) 53%, rgba(133, 205, 118, 1) 65%, rgba(237, 221, 83, 1) 100%);
     
-    /* background-image*/ 
+    /* background-image*/
+    background-image: url("assets/pexels-sanketh-rao-716107.jpg");
     
     /* controlling background repeat */ 
+    background-repeat: no-repeat;
     
     /* controlling background-size */ 
+    background-size: cover;
     
-    /* position the background image */ 
+    /* position the background image */
+    background-position: center;
     
-    /* background-attachment */ 
+    /* background-attachment */
+    background-attachment: fixed;
     
     
     /*background shorthand */
     /* A background-color may only be specified after the final comma.
     The value of background-size may only be included immediately after background-position, separated with the '/' character, like this: center/80% */
-   
-  
+
+    /*background: url("assets/pexels-sanketh-rao-716107.jpg") no-repeat center/cover fixed ;*/
+
 }
+
+/*PART TWO - Responsive */
 
 
 .photo-container {
@@ -102,11 +113,11 @@ header {
 }
 
 
-/*PART TWO - MANIPULATING IMAGES WITH CSS */
+/*PART Three - MANIPULATING IMAGES WITH CSS */
 
-.flex:nth-of-type(1) article:nth-of-type(2) img:hover {
+.flex:nth-of-type(1) article:nth-of-type(2) img {
     /*filters */
-    filter: blur(2px); 
+    /*filter: blur(2px); */
     /*filter: brightness(0.4);
     filter: contrast(200%);
     filter: drop-shadow(16px 16px 20px blue)
