@@ -1,0 +1,430 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+
+/*---------General Styles---------*/
+/* Setting the theme colours / values */
+:root {
+    --base: #dad7cd;
+    --whiteMain: #f5f5f5;
+    --greenMain: #344e41;
+    --greenSecondary: #3a5a40;
+    --greenAccent: #446444;
+    --textShadow: 4px 4px 4px rgba(0, 0, 0, 0.9);
+
+}
+
+html {
+    /* reset root element font size */
+    font-size: 62.5%; /* equivalent to 10px, easier to work with */
+    background-color: var(--base);
+    color: var(--greenSecondary);
+}
+
+abbr {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+a:hover {
+    color: var(--greenAccent);
+}
+
+/*---------Web Typography---------*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bungee', sans-serif; /*--------- USING CUSTOM FONTS HERE -------------------------------------------*/
+}
+
+h1 {
+    font-size: clamp(3rem, 11vw, 11rem);
+    color: var(--whiteMain);
+    text-shadow: var(--textShadow);
+    text-align: center;
+    line-height: 1.1;
+    padding: 0 6rem;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 5vw, 4rem);
+    color: var(--whiteMain);
+    text-shadow: var(--textShadow);
+
+}
+
+h3 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--base);
+}
+
+h4 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h5 {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+h6 {
+    font-size: clamp(1.125rem, 2vw, 1.75rem);
+}
+
+p, a, li, ul, ol, dl, dt, dd {
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    font-family: 'Fredoka', sans-serif; /*--------- USING CUSTOM FONTS HERE ------------------------------------ -----*/
+    max-width: 75ch;
+}
+
+p {
+    padding: 1rem;
+}
+
+/*------------------------------------------------- TYPE SELECTOR EXAMPLE --------------------------------------------*/
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* Header Styling */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/hero-bg-img.jpg") no-repeat center/cover fixed;
+}
+
+/* Summary Section */
+/*------------------------------------------------- ID SELECTOR EXAMPLE ----------------------------------------------*/
+#zen-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------- CLASS SELECTOR EXAMPLE -------------------------------------------*/
+.summary-btn {
+    background-color: var(--greenMain);
+    padding: 0.5vw;
+    margin: 0 0.3vw;
+    border-radius: 0.5em;
+    color: var(--base);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------- PSEUDO-CLASS SELECTOR EXAMPLE ------------------------------------*/
+.summary-btn:hover {
+    background-color: var(--greenAccent);
+    color: var(--base);
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*Preamble Section*/
+.preamble {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 0;
+    min-height: 80vh;
+    background: url("../img/road-to-enlightenment.jpg") no-repeat center/cover fixed;
+}
+
+.preamble div:nth-child(1) h3 {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    color: var(--whiteMain);
+    text-shadow: var(--textShadow);
+    padding: 0 4rem;
+}
+
+.preamble div:nth-child(2) {
+    text-align: center;
+    background-color: var(--base);
+    max-width: 35vw;
+    border-radius: 3em;
+    margin: auto;
+    padding: 3em;
+}
+
+/* Explanation Section */
+.explanation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem;
+    text-align: center;
+}
+
+/*------------------------------------------------- DESCENDANT COMBINATOR EXAMPLE ------------------------------------*/
+.explanation div {
+    text-align: center;
+    background-color: var(--greenMain);
+    border-radius: 3em;
+    margin: auto;
+    padding: 3em;
+    color: var(--base);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 15px;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------- CHILD COMBINATOR EXAMPLE -----------------------------------------*/
+.explanation > h3 {
+    color: var(--greenMain);
+    padding-bottom: 1em;
+    margin: 0 auto;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* Participation Section */
+.participation {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    text-align: center;
+    padding: 10rem 0;
+    min-height: 80vh;
+    background: url("../img/participation.jpg") no-repeat center/cover fixed;
+}
+
+.participation h3 {
+    text-align: center;
+    margin: auto;
+    color: var(--whiteMain);
+    text-shadow: var(--textShadow);
+}
+
+/*------------------------------------------------- ADJACENT SIBLING COMBINATOR EXAMPLE ------------------------------*/
+.participation > h3 + div {
+    text-align: center;
+    background-color: var(--base);
+    max-width: 60vw;
+    border-radius: 3em;
+    margin: auto;
+    padding: 3em;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* Benefits Section */
+.benefits {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 8rem;
+    gap: 5rem;
+    min-height: 30vh;
+    background-color: var(--greenSecondary);
+    color: var(--base);
+}
+
+/* Requirements Section */
+.requirements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 0;
+}
+
+.requirements div {
+    text-align: center;
+    background-color: var(--greenMain);
+    border-radius: 3em;
+    margin: auto 4rem;
+    padding: 3em;
+    color: var(--base);
+    box-shadow: rgba(0, 0, 0, 0.5) 0 5px 15px;
+}
+
+.requirements h3 {
+    color: var(--greenSecondary);
+    padding-bottom: 2em;
+}
+
+/* Footer Section */
+footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--greenMain);
+    min-height: 20vh;
+}
+
+footer a {
+    color: var(--base);
+    font-size: 3rem;
+    transition: transform .3s ease-in-out;
+}
+
+footer a:hover {
+    color: var(--base);
+    transform: scale(1.5);
+}
+
+/* Aside Section */
+aside .wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    min-height: 50vh;
+    background: url("../img/aside.jpg") no-repeat center/cover fixed;
+}
+
+aside .wrapper div {
+    text-align: center;
+    background-color: var(--base);
+    border-radius: 3em;
+    padding: 3em;
+    min-height: 30vh;
+    min-width: 20vw;
+    align-content: center;
+}
+
+aside ul {
+    padding: 0;
+}
+
+/*------------------------------------------------- ATTRIBUTE SELECTOR EXAMPLE ---------------------------------------*/
+aside a[title] {
+    font-weight: bold;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+aside h3 {
+    color: var(--greenMain);
+    font-size: clamp(1.125rem, 2vw, 1.75rem);
+    padding-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    #zen-summary {
+        padding: 0 5rem;
+    }
+
+    .preamble {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .preamble div:nth-child(2) {
+        margin: 3rem auto;
+        max-width: 50vw;
+    }
+
+    .participation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .participation div {
+        margin: 0 auto;
+    }
+
+    .participation h3 {
+        margin: 2rem 0;
+    }
+
+    .benefits {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    aside .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 10rem 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #zen-summary {
+        padding: 0 4rem;
+        text-align: center;
+    }
+
+    .preamble div:nth-child(2) {
+        max-width: 80vw;
+    }
+
+    .explanation {
+        padding: 6rem 4rem;
+    }
+
+    .participation div {
+        max-width: 80vw;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 5rem 0;
+    }
+}
+
