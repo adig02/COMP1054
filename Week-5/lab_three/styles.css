@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f8fafc;
+    --text: #0f172a;
+    --muted: #475569;
+    --panel: #ffffff;
+    --border: #e2e8f0;
+    --accent: #2563eb;
+    --accent-600: #1d4ed8;
+    --gap: 1rem;
+}
+
+html,
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
+    /* Hint: this area should space the brand and nav apart and keep them aligned */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.brand-link {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.top-nav {
+    /* Hint: try arranging links in a row with some spacing */
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: var(--text);
+}
+
+/* Hero */
+.hero {
+    /* Hint: consider a layout that stacks elements and centers them */
+    text-align: center;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero h1{
+    margin-bottom: 0;
+}
+
+.hero .lead {
+    color: var(--muted);
+    max-width: 60ch;
+    margin: 0.5rem auto 1rem;
+}
+
+.hero-actions {
+    /* Hint: place these buttons side by side with a little gap */
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    border-radius: 8px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: var(--accent-600);
+    border-color: var(--accent-600);
+}
+
+.btn.small {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Album grid */
+.album {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    display: flex;
+    margin: 0 15rem;
+
+
+}
+
+.cards {
+    /* Hint: think about letting these child cards wrap onto new lines */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    /* column layout for card content */
+    flex-direction: column;
+    /* Hint: flexible sizing here will control how many cards fit per row */
+    flex: 1 1 300px;
+
+}
+
+.thumb {
+    background: #cbd5e1;
+    height: 180px;
+    /* placeholder height */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    justify-content: flex-end;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    /* Hint: what could you do so this section always sits at the bottom? */
+    align-self: flex-end;
+}
+
+.meta {
+    color: var(--muted);
+    margin-left: auto;
+}
+
+/* Footer */
+.site-footer {
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+}
+
+.back-to-top {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+
+/* Reflection
+
+1 – Which sections of the layout felt like a natural fit for Flexbox?
+
+The header felt natural because you are working with two child elements and just need to add flex with justify-content: space between. The cards flex wrap feature is natural and allows items to wrap to the next line as the size is resized, requiring less media queries.
+
+
+
+2 – Which sections were workable with Flexbox, but felt a bit limited or could be improved?
+
+Card Actions because of the unique layout with the view/edit buttons on one side and the span at the end. Due to various child elements required extra workaround.
+
+
+*/
